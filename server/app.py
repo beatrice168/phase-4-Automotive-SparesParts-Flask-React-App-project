@@ -26,7 +26,6 @@ class Index(Resource):
         return response
 api.add_resource(Index, '/home')
 
-
 #get  showroom
 class Show(Resource):
     def get(self):
@@ -54,25 +53,8 @@ class Show(Resource):
 
         return make_response(jsonify(new_data.to_dict()),201)
 
-        
-
 api.add_resource(Show,"/showroom")        
 
-
-#get by name  showroom
-# #seen by the customer
-# class showByAccesories(Resource):
-#     def get(self,accessories):
-#         # show = Showroom.query.filter_by(accessories=accessories).first().to_dict()
-#         show = Showroom.query.filter_by(accessories=accessories).first()
-#         data = {
-#             "accessories":show.accessories
-#         }
-
-
-#         return make_response(jsonify(data),200)
-   
-    #delete showroom-accessories
 class showByAccesories(Resource):
     def get(self,accessories):
         names = []
@@ -93,23 +75,7 @@ class showByAccesories(Resource):
             jsonify(response_dict),200
         )  
         return response 
-    # def patch(self, accessories):
-    #     show = Showroom.query.filter_by(accessories=accessories).first()
-        
-    #     if show is None:
-    #         # Handle case when no matching showroom is found
-    #         return make_response(jsonify({'error': 'Showroom not found'}), 404)
-        
-    #     for attr in request.form:
-    #         if hasattr(show, attr):
-    #             setattr(show, attr, request.form[attr])
-    #     db.session.add(show)
-    #     db.session.commit()
-        
-    #     response_dict = show.to_dict()  # Assuming to_dict() method is defined in Showroom model
-        
-    #     return make_response(jsonify(response_dict), 200)
-        
+
     def delete(self,accessories):
         show = Showroom.query.filter_by(accessories=accessories).first()
         db.session.delete(show)
@@ -123,28 +89,6 @@ class showByAccesories(Resource):
     
 api.add_resource(showByAccesories,"/showroom/<string:accessories>")    
 
-#seen by the owner of the showroom
-# class ByName(Resource):
-    
-    
-    #patch showroom
-# class EditShowroom(Resource):
-#     def patch(self,accessories):
-#         show = Showroom.query.filter_by(accessories=accessories).first()
-#         for attr in request.form:
-#             setattr(show,attr,request.form[attr])
-#         db.session.add(show)
-#         db.session.commit()
-#         response_dict = show.to_dict()
-#         response = make_response(
-#             jsonify(response_dict),200
-#         )  
-#         return response 
-    
-# api.add_resource(EditShowroom,"/show/<string:accessories>")     
-
-
-
 #get customers
 class Customers(Resource):
     def get(self):
@@ -156,11 +100,6 @@ class Customers(Resource):
         return response
     
 api.add_resource(Customers,"/customer")    
-    
-
-        
-
-
 
 if __name__ == '__main__':
     app.run(port=5555)
