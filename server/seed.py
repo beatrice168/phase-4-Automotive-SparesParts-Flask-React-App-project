@@ -21,7 +21,7 @@ with app.app_context():
             # locations = ["Nakuru","Nairobi","Mombasa"]
             # accessories = ["tyre","rims","dashboard","engine","gearbox","windscreen","wiper","side_mirrors","engine_mount","air_filter","brakepads","headlights","plugs","shock","bearing","spring","cv_joint","gearbox_mounting","stearing_rack","push","crank_shaft"]
         tyre = Showroom(
-            name = "mascardi", 
+            # name = "mascardi", 
             location = "Nairobi",
             description = "Positive - Stable handling and short braking in the dry, low noise, good comfort.",
             accessories= "tyre",
@@ -34,7 +34,7 @@ with app.app_context():
         # db.session.add_all(tyre)
 
         rims = Showroom(
-            name = "kairo", 
+            # name = "kairo", 
             location = "Nairobi",
             description = "Manufactured in Germany; x-ray inspected to ensure quality,One Piece Counter Pressure Cast Wheel with Flow-formed rim, Weight optimized by FEM analysis",
             accessories= "rims",
@@ -45,7 +45,7 @@ with app.app_context():
         # db.session.add_all(rims)
 
         engine = Showroom(
-            name = "kairo", 
+            # name = "kairo", 
             location = "Nairobi",
             description = "Petrol 3.0 L N52/N55 I6 4.4 L N63/S63 V8 4.8 L N62 V8 Diesel: 3.0 L M57/N57 I6",
             accessories= "engine",
@@ -56,7 +56,7 @@ with app.app_context():
         # db.session.add_all(engine)
 
         gearbox = Showroom(
-            name = "tristar", 
+            # name = "tristar", 
             location = "Nakuru",
             description = "Rigorously formulated and tested by Bosch's engineers, the Organic friction material in the QuietCast line is meticulously engineered to achieve superior performance, exceptional stopping power, and quiet operation with low dust",
             accessories= "brake_pads",
@@ -67,7 +67,7 @@ with app.app_context():
         # db.session.add_all(gearbox)
 
         air_filter= Showroom(
-            name = "kenjap", 
+            # name = "kenjap", 
             location = "Mombasa",
             description = "TRAPS DIRT AND FILTH: Various damaging particles and dust can collect over your engine, however, with FRAM car air filter, Extra Guard entraps these particles for a safer, cleaner, and quality engine performance.",
             accessories= "air_filter",

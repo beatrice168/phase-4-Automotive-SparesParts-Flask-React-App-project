@@ -8,7 +8,7 @@ class Showroom(db.Model, SerializerMixin):
     __tablename__="showroom"
     serialize_rules = ("-showroom_customer.showroom",)
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
+    # name = db.Column(db.String)
     location = db.Column(db.String)
     accessories = db.Column(db.String)
     description = db.Column(db.String)

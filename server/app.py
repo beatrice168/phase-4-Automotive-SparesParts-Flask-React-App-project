@@ -41,7 +41,7 @@ class Show(Resource):
     def post(self):
         data = request.get_json()
         new_data = Showroom(
-            name = data['name'],
+            # name = data['name'],
             location = data['location'],
             accessories = data['accessories'],
             description = data['description'],
@@ -60,42 +60,105 @@ api.add_resource(Show,"/showroom")
 
 
 #get by name  showroom
-#seen by the customer
+# #seen by the customer
+# class showByAccesories(Resource):
+#     def get(self,accessories):
+#         # show = Showroom.query.filter_by(accessories=accessories).first().to_dict()
+#         show = Showroom.query.filter_by(accessories=accessories).first()
+#         data = {
+#             "accessories":show.accessories
+#         }
+
+
+#         return make_response(jsonify(data),200)
+   
+    #delete showroom-accessories
 class showByAccesories(Resource):
     def get(self,accessories):
-        # show = Showroom.query.filter_by(accessories=accessories).first().to_dict()
+        names = []
+        for show in Showroom.query.filter_by(accessories=accessories).all():
+            data = show.to_dict()
+            names.append(data)
+    
+        return make_response(jsonify(names),200)
+
+    def patch(self,accessories):
         show = Showroom.query.filter_by(accessories=accessories).first()
-        data = {
-            "accessories":show.accessories
-        }
+        for attr in request.form:
+            setattr(show,attr,request.form[attr])
+        db.session.add(show)
+        db.session.commit()
+        response_dict = show.to_dict()
+        response = make_response(
+            jsonify(response_dict),200
+        )  
+        return response 
+    # def patch(self, accessories):
+    #     show = Showroom.query.filter_by(accessories=accessories).first()
+        
+    #     if show is None:
+    #         # Handle case when no matching showroom is found
+    #         return make_response(jsonify({'error': 'Showroom not found'}), 404)
+        
+    #     for attr in request.form:
+    #         if hasattr(show, attr):
+    #             setattr(show, attr, request.form[attr])
+    #     db.session.add(show)
+    #     db.session.commit()
+        
+    #     response_dict = show.to_dict()  # Assuming to_dict() method is defined in Showroom model
+        
+    #     return make_response(jsonify(response_dict), 200)
+        
+    def delete(self,accessories):
+        show = Showroom.query.filter_by(accessories=accessories).first()
+        db.session.delete(show)
+        db.session.commit()
 
-
-        return make_response(jsonify(data),200)
+        response = make_response(
+            jsonify({"message":"deleted successfully"}), 200
+        )
+        return response
     
     
 api.add_resource(showByAccesories,"/showroom/<string:accessories>")    
 
 #seen by the owner of the showroom
-class ByName(Resource):
-    def get(self,name):
-        names = []
-        for show in Showroom.query.filter_by(name=name).all():
-            data = show.to_dict()
-            names.append(data)
+# class ByName(Resource):
     
-        return make_response(jsonify(names),200)
     
-api.add_resource(ByName,"/show/<string:name>")     
-
-
-#patch showroom
-
-#delete showroom-accessories
+    #patch showroom
+# class EditShowroom(Resource):
+#     def patch(self,accessories):
+#         show = Showroom.query.filter_by(accessories=accessories).first()
+#         for attr in request.form:
+#             setattr(show,attr,request.form[attr])
+#         db.session.add(show)
+#         db.session.commit()
+#         response_dict = show.to_dict()
+#         response = make_response(
+#             jsonify(response_dict),200
+#         )  
+#         return response 
+    
+# api.add_resource(EditShowroom,"/show/<string:accessories>")     
 
 
 
 #get customers
+class Customers(Resource):
+    def get(self):
+        customer = []
+        for custom in Customer.query.all():
+            data = custom.to_dict()
+            customer.append(data)
+        response = make_response(jsonify(customer),200)
+        return response
+    
+api.add_resource(Customers,"/customer")    
+    
 
+        
 
 
 
