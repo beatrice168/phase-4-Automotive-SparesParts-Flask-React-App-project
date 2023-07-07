@@ -1,11 +1,11 @@
 from flask import Flask, jsonify, request, make_response
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
-
-
+from flask_cors import CORS
 from models import db, Showroom, Customer, Showroom_customer
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -64,8 +64,8 @@ class showByAccesories(Resource):
     
         return make_response(jsonify(names),200)
 
-    def patch(self,accessories):
-        show = Showroom.query.filter_by(accessories=accessories).first()
+    def patch(self,id):
+        show = Showroom.query.filter_by(id=id).first()
         for attr in request.form:
             setattr(show,attr,request.form[attr])
         db.session.add(show)
@@ -76,8 +76,8 @@ class showByAccesories(Resource):
         )  
         return response 
 
-    def delete(self,accessories):
-        show = Showroom.query.filter_by(accessories=accessories).first()
+    def delete(self,id):
+        show = Showroom.query.filter_by(id=id).first()
         db.session.delete(show)
         db.session.commit()
 
@@ -87,7 +87,7 @@ class showByAccesories(Resource):
         return response
     
     
-api.add_resource(showByAccesories,"/showroom/<string:accessories>")    
+api.add_resource(showByAccesories,"/showroom/<int:id>")    
 
 #get customers
 class Customers(Resource):

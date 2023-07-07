@@ -1,14 +1,16 @@
 import React from 'react'
-// import {NavLink} from 'react-router-dom'
-import { Link } from "react-router-dom";
+import {NavLink} from 'react-router-dom'
+import './link.css';
 
-const Navbar = () => {
+function Navbar () {
   return (
-    <nav>
-      <Link  to= '/'>Home</Link>
-      <Link to= '/accessory'>Accessory</Link>
-      <Link to= '/accessorylist'>AccessoryList</Link>
+    <div style={{color:"black"}} className='l'>
+    <nav className='links'>
+      <NavLink exact to='/'>Home</NavLink>
+      <NavLink to='/accessory'>Accessory</NavLink>
+      <NavLink to='/accessoryList'>Accessory List</NavLink>
     </nav>
+    </div>
   )
 }
 
