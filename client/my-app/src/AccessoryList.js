@@ -3,6 +3,7 @@ import ManipulateAccessory from './ManipulateAccessory'
 
 const AccessoryList = ({id})=> {
     const [data, setData] = useState([])
+    // const[searchTerm, onSearchChange]=useState("")
     const[patch,setPatch]=useState({
         location: "", 
         accessories: "",
@@ -60,6 +61,11 @@ function updateAccessory(id){
  <ManipulateAccessory key={index} id={item.id} updateAccessory={updateAccessory} toggleForm={toggleForm} deleteAccessory={deleteAccessory} location={item.location} price={item.price} description={item.description} image={item.image}/>
   
  )
+//  const displayedAccessories = accessories.filter((accessory) => {
+//   return accessories.name.toLowerCase().includes(searchTerm.toLowerCase());
+// });
+
+// if(!accessories) return <h1>...loading</h1>
    
 
 return (

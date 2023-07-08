@@ -47,6 +47,7 @@ class Show(Resource):
             price = data['price'],
             image = data['image']
         )
+        
 
         db.session.add(new_data)
         db.session.commit()

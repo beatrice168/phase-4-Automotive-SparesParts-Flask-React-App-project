@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import car from './image/car.png'
 function Accessory() {
   const [formData, setFormData] =  useState({
     location: "", 
@@ -15,6 +16,22 @@ function Accessory() {
   }
   function handleSubmit(event) {
     event.preventDefault()
+
+  // Validate price as integer
+  const priceRegex = /^\d+$/;
+  if (!priceRegex.test(formData.price)) {
+    alert("Please enter a valid price as an integer.");
+    return;
+  }
+
+  // Validate image as URL with .jpg or .png extension
+  const imageRegex = /\.(jpg|png)$/;
+  if (!imageRegex.test(formData.image)) {
+    alert("Please enter a valid image URL with .jpg or .png extension.");
+    return;
+  }
+
+
     const post = {
       method: "POST",
       headers: {
@@ -30,15 +47,17 @@ function Accessory() {
 
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="accessory-form">
-        <input onChange={handleOnChange} type= "text" name = "location" value ={formData.location} placeholder = "location" required/>
-        <input onChange={handleOnChange} type = "text" name = "accessories" value = {formData.accessories} placeholder = "accessory"required/>
-        <input onChange={handleOnChange} type = "text" name = "description"value = {formData.description} placeholder = "description"required/>
-        <input onChange={handleOnChange} type = "text" name = "price" value = {formData.price} placeholder = "price"required/>
-        <input onChange={handleOnChange} type = "text" name = "image" value = {formData.image} placeholder = "image"required/>
-        <button type= "submit" > add Accessory</button>
+        <input className='input' onChange={handleOnChange} type= "text" name = "location" value ={formData.location} placeholder = "location" required/>
+        <input className='input' onChange={handleOnChange} type = "text" name = "accessories" value = {formData.accessories} placeholder = "accessory"required/>
+        <input className='input' onChange={handleOnChange} type = "text" name = "description"value = {formData.description} placeholder = "description"required/>
+        <input className='input' onChange={handleOnChange} type = "text" name = "price" value = {formData.price} placeholder = "price"required/>
+        <input className='input' onChange={handleOnChange} type = "text" name = "image" value = {formData.image} placeholder = "image"required/>
+        <button className='btn' type= "submit" > add Accessory</button>
     </form>
-
+    <img src={car} alt="car" className='car'/>
+    </>
 
   )
 }
