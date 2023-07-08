@@ -13,14 +13,18 @@
   padding: auto;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  border-radius: 15px;
+  height: 60vh;
+  width: 300px;
 }
 .img{
   display: block;
-  width: 100%;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
   border:2px solid;
-  height: 30%;
+  height: 50%;
+  border-radius: 15px;
 }
 .charac{
   background-color: aliceblue;
@@ -54,7 +58,7 @@
 
 } */
 .n{
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 .body{
   background-color: aqua;
@@ -72,6 +76,7 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  margin-top: 20px;
 }
 .btn{
   height: 40px;
@@ -81,9 +86,47 @@
   background-color: black;
   color: white;
 }
-.links{
+.link{
   background-color: #1495c4;
   /* color: red; */
+  height: 30px;
+  margin-top: 20px;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  padding: 10px;
+  
+}
+
+.links {
   text-decoration: none;
-  height: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 20px;
+
+}
+
+.btnn {
+  margin: 10px;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  /* display: relative; */
+  margin-top: 60px;
+  margin-left: 15px;
+  background-color: green;
+  font-size: 15px;
+}
+
+.btnnn {
+  margin: 10px;
+  font-size: 15px;
+  background-color: red;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  /* display: relative; */
+  margin-top: 60px;
+  margin-left: 15px;
 }

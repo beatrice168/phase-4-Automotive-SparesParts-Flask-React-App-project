@@ -18,9 +18,9 @@ function Navbar () {
   return (
     <div>
     <nav className='link'>
-      <NavLink exact to='/' className={links}>Home</NavLink>
-      <NavLink to='/accessory' className={links} >Accessory</NavLink>
-      <NavLink to='/accessoryList' className={links}>Accessory List</NavLink>
+      <NavLink exact to='/' className="links">Home</NavLink>
+      <NavLink to='/accessory' className="links" >Accessory</NavLink>
+      <NavLink to='/accessoryList' className="links">Accessory List</NavLink>
     </nav>
     </div>
   )
