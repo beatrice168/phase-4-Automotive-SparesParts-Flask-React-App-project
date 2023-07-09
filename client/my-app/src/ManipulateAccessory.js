@@ -5,10 +5,10 @@ import React from 'react'
   return (
     <div className='item'>
         <img src={image} alt='img'className='img' />
-        <p>{location}</p>
+        <p>location:{location}</p>
         <p>{accessories}</p>
         <p>{description}</p>
-        <p>{price}</p>
+        <p>price:{price}</p>
         <button onClick={toggleForm} className="btnn">
         Update
       </button>
