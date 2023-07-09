@@ -1,38 +1,117 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* .body{
+  color: aqua;
+} */
+.item{
+  margin-top: 20px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; 
+  padding: auto;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  height: 60vh;
+  width: 300px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img{
+  display: block;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border:2px solid;
+  height: 50%;
+  border-radius: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.charac{
+  background-color: aliceblue;
+  height: 20%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
+}
+.btn{
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
+  height: 5%;
+  width: 10;
+}
+.car{
+  height:1000px;
+}
+
+.body{
+  background-color: aqua;
+}
+.accessory-form{
+  padding:1%;
+}
+.input{
+  border-radius: 20px;
+  height: 30px;
+  margin: 30px;
+  color: black;
+}
+.car{
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 20px;
+}
+.btn{
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.link{
+  background-color: #1495c4;
+  height: 30px;
+  margin-top: 20px;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  padding: 10px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links {
+  text-decoration: none;
+  margin: 30px;
+  color: #fff;
+  font-size: 20px;
+
+}
+
+.btnn {
+  margin: 10px;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  /* display: relative; */
+  margin-top: 60px;
+  margin-left: 15px;
+  background-color: green;
+  font-size: 15px;
+}
+
+.btnnn {
+  margin: 10px;
+  font-size: 15px;
+  background-color: red;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  /* display: relative; */
+  margin-top: 60px;
+  margin-left: 15px;
 }
