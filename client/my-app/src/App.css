@@ -5,11 +5,11 @@
   color: aqua;
 } */
 .item{
+  margin-top: 20px;
   border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
   display: flex; 
-  /* flex-direction: row; */
   padding: auto;
   flex-wrap: wrap;
   margin-bottom: 50px;
@@ -42,24 +42,10 @@
   height: 5%;
   width: 10;
 }
-/* .links{
-  text-decoration: none;
-  color: black;
-} */
-/* .homy{
-  background-image: url(https://wallpapercave.com/dwp1x/wp3810206.jpg);
-}
-  */
 .car{
   height:1000px;
 }
-/* .p{
-  color:aqua;
 
-} */
-/* .n{ */
-  /* background-color: aqua; */
-/* } */
 .body{
   background-color: aqua;
 }
@@ -67,10 +53,10 @@
   padding:1%;
 }
 .input{
-  /* padding: 5%; */
   border-radius: 20px;
   height: 30px;
   margin: 30px;
+  color: black;
 }
 .car{
   background-size: cover;
@@ -88,7 +74,6 @@
 }
 .link{
   background-color: #1495c4;
-  /* color: red; */
   height: 30px;
   margin-top: 20px;
   width: 40vw;

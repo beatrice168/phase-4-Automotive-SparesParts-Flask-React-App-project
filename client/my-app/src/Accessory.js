@@ -14,6 +14,9 @@ function Accessory() {
       [event.target.name]: event.target.value,
     })
   }
+  // function handleClickSubmit(){
+  //   alert("added successfully")
+  // }
   function handleSubmit(event) {
     event.preventDefault()
 
@@ -54,7 +57,7 @@ function Accessory() {
         <input className='input' onChange={handleOnChange} type = "text" name = "description"value = {formData.description} placeholder = "description"required/>
         <input className='input' onChange={handleOnChange} type = "text" name = "price" value = {formData.price} placeholder = "price"required/>
         <input className='input' onChange={handleOnChange} type = "text" name = "image" value = {formData.image} placeholder = "image"required/>
-        <button className='btn' type= "submit" > add Accessory</button>
+        <button className='btn' type= "submit" value="accessory added" onClick={(e)=>alert(e.target.value)}> add Accessory</button>
     </form>
     <img src={car} alt="car" className='car'/>
     </>
