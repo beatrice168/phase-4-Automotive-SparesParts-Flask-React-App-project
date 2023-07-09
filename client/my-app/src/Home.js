@@ -1,11 +1,11 @@
 import React from 'react'
-import car from './image/car.png'
+import home from './image/home.png'
 function Home() {
   return (
     <>
     <div className='n'>
      {/* <div>Home</div> */}
-     <img src={car} alt='car' className='car'/>
+     <img src={home} alt='car' className='car'/>
     </div>
     </>
   )
